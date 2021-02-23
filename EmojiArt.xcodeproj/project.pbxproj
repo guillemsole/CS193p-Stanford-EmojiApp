@@ -12,6 +12,8 @@
 		6388DA6425DFE54F00D03D30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6388DA6325DFE54F00D03D30 /* Assets.xcassets */; };
 		6388DA6725DFE54F00D03D30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6388DA6625DFE54F00D03D30 /* Preview Assets.xcassets */; };
 		6388DA7025DFE55F00D03D30 /* EmojiArtDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6388DA6F25DFE55F00D03D30 /* EmojiArtDocument.swift */; };
+		6388DA7425DFEDE100D03D30 /* EmojiArt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6388DA7325DFEDE100D03D30 /* EmojiArt.swift */; };
+		6388DA7725DFF49900D03D30 /* EmojiArtExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6388DA7625DFF49900D03D30 /* EmojiArtExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		6388DA6625DFE54F00D03D30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6388DA6825DFE54F00D03D30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6388DA6F25DFE55F00D03D30 /* EmojiArtDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtDocument.swift; sourceTree = "<group>"; };
+		6388DA7325DFEDE100D03D30 /* EmojiArt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArt.swift; sourceTree = "<group>"; };
+		6388DA7625DFF49900D03D30 /* EmojiArtExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				6388DA5F25DFE54C00D03D30 /* EmojiArtApp.swift */,
 				6388DA6F25DFE55F00D03D30 /* EmojiArtDocument.swift */,
 				6388DA6125DFE54C00D03D30 /* EmojiArtDocumentView.swift */,
+				6388DA7325DFEDE100D03D30 /* EmojiArt.swift */,
+				6388DA7625DFF49900D03D30 /* EmojiArtExtensions.swift */,
 				6388DA6325DFE54F00D03D30 /* Assets.xcassets */,
 				6388DA6825DFE54F00D03D30 /* Info.plist */,
 				6388DA6525DFE54F00D03D30 /* Preview Content */,
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6388DA7425DFEDE100D03D30 /* EmojiArt.swift in Sources */,
+				6388DA7725DFF49900D03D30 /* EmojiArtExtensions.swift in Sources */,
 				6388DA6225DFE54C00D03D30 /* EmojiArtDocumentView.swift in Sources */,
 				6388DA7025DFE55F00D03D30 /* EmojiArtDocument.swift in Sources */,
 				6388DA6025DFE54C00D03D30 /* EmojiArtApp.swift in Sources */,

@@ -19,7 +19,7 @@ struct EmojiArtDocumentView: View {
     var body: some View {
         VStack {
             HStack {
-                PaletterChooser(document: document, chosenPallet: $chosenPalette)
+                PaletterChooser(document: document, chosenPalette: $chosenPalette)
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(chosenPalette.map { String($0) }, id: \.self) { emoji in

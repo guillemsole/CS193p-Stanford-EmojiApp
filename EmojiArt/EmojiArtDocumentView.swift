@@ -30,17 +30,23 @@ struct EmojiArtDocumentView: View {
                             .offset(self.panOffset)
                     )
                     .gesture(doubleTapToZoom(in: geometry.size))
-                    
-                    ForEach(self.document.emojis) { emoji in
-                        Text(emoji.text)
-                            .font(animatableWithSize: emoji.fontSize * zoomScale)
-                            .position(position(for: emoji, in: geometry.size))
+                    if isLoading {
+                        Image(systemName: "hourglass").imageScale(.large).spinning()
+                    } else {
+                        ForEach(self.document.emojis) { emoji in
+                            Text(emoji.text)
+                                .font(animatableWithSize: emoji.fontSize * zoomScale)
+                                .position(position(for: emoji, in: geometry.size))
+                        }
                     }
                 }
                 .clipped()
                 .gesture(panGesture())
                 .gesture(zoomGesture())
                 .edgesIgnoringSafeArea([.horizontal, .bottom])
+                .onReceive(document.$backgroundImage) { image in
+                    zoomToFit(image, in: geometry.size)
+                }
                 .onDrop(of: ["public.image", "public.text"], isTargeted: nil) { providers, location in
                     var location = geometry.convert(location, from: .global)
                     location = CGPoint(x: location.x - geometry.size.width/2, y: location.y - geometry.size.height/2)
@@ -50,6 +56,10 @@ struct EmojiArtDocumentView: View {
                 }
             }
         }
+    }
+    
+    var isLoading: Bool {
+        document.backgroundURL != nil && document.backgroundImage == nil
     }
     
     // Zoom gesture recognizer
@@ -118,7 +128,7 @@ struct EmojiArtDocumentView: View {
     
     private func drop(providers: [NSItemProvider], at location: CGPoint) -> Bool {
         var found = providers.loadFirstObject(ofType: URL.self) { url in
-            document.setBackgroundURL(url)
+            document.backgroundURL = url
         }
         if !found {
             found = providers.loadObjects(ofType: String.self) { string in
